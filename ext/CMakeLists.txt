@@ -17,7 +17,7 @@ if(NOT glad_FOUND)
     #endif()
 
     execute_process(
-            COMMAND ${GIT_EXECUTABLE} clone
+            COMMAND ${GIT_EXECUTABLE} submodule update  --init --glad/glad
             https://github.com/markminch562/glad.git
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/glad
     )
@@ -33,7 +33,7 @@ if(NOT glfw_FOUND)
         message(FATAL_ERROR "Git not found, unable to add GLFW to source")
     endif()
     execute_process(
-            COMMAND ${GIT_EXECUTABLE} clone
+            COMMAND ${GIT_EXECUTABLE} submodule update  --init --glfw/glfw
             https://github.com/markminch562/glfw.git
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/glfw
     )
