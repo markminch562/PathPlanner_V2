@@ -1,0 +1,6 @@
+[submodule "ext/glad/glad"]
+	path = ext/glad/glad
+	url = https://github.com/markminch562/glad.git
+[submodule "ext/glfw/glfw"]
+	path = ext/glfw/glfw
+	url = https://github.com/markminch562/glfw.git
