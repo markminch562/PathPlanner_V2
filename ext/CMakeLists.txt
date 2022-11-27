@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.20.0)
 
 project(external_libraries C CXX)
+
+set(GIT_SUBMODULE_PATH_GLAD "${GIT_SUBMODULE_PATH}glad/glad")
+set(GIT_SUBMODULE_PATH_GLFW "${GIT_SUBMODULE_PATH}glfw/glfw")
+add_subdirectory(glad)
+add_subdirectory(glfw)
 #[[
 find_package(X11 QUIET)
 if(NOT X11_FOUND)
