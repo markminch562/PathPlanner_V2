@@ -8,4 +8,8 @@ set(GIT_SUBMODULE_PATH "/ext/")
 add_subdirectory(ext)
 add_subdirectory(src)
 
+add_executable(PathPlanner main.cpp tests/HelloWorld.cpp)
+
+
+
 #add_executable(PathPlanner_V2 src/executables/openWindow.cpp)

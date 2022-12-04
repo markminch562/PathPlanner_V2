@@ -1,6 +1,9 @@
 #include <iostream>
+int run();
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+
+    //int result = run();
+    int result = run();
+    return result;
 }

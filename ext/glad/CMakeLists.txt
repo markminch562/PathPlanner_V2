@@ -22,5 +22,5 @@ if(${GLAD_TARGET_AVAILABLE})
     set(GLAD_SOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/glad/")
     add_subdirectory("${GLAD_SOURCES_DIR}/cmake" glad_mx)
     #This program aims to be usable someday on linux, mac, and windows and so OpenGl will only be used up to the version available to mac computers
-    glad_add_library(glad_gl_core REPRODUCIBLE MX API gl:core=4.1)
+    glad_add_library(glad_gl_core SHARED API gl:core=4.1)
 endif()
