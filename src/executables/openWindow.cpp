@@ -4,18 +4,30 @@
 
 #include <iostream>
 #include <string>
-//#include "GLFW/glfw3.h"
-#include "Dynamic.h"
+//#include "Dynamic.h"
 #include <dlfcn.h>
 #include <filesystem>
-
-#include "Window/WindowSystem.h"
+#include "graphics/display.hpp"
 typedef void* dl_handle;
 typedef int (*running)();
-int main()
+
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if(key ==  GLFW_KEY_Q)
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+    if(key == GLFW_KEY_L && action == GLFW_PRESS)
+    {
+        std::cout<<"Loading in context functions "<<std::endl;
+    }
+}
+
+
+int run()
 {
     std::cout<<"A window will be created here for this project"<<std::endl;
     //GLFWwindow* window
+    /*
     dl_handle handle= nullptr;
     handle  = dlopen("./DynamicLib/libRandom.so", RTLD_LAZY);
 
@@ -39,7 +51,17 @@ int main()
     runner();
 
     dlclose(handle);
-    WindowLoader(3, 3, "Hello Window", 480, 920);
+     */
+    Graphics::Display display;
+    display.createMainWindow("Basic Window", 640, 480);
+
+    //glfwSetWindowUserPointer(window);
+
+    while(display.DisplayRunning())
+    {
+        display.refreshDisplay();
+    }
+
 
 
     return 0;

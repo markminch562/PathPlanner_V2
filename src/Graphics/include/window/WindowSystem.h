@@ -5,10 +5,11 @@
 #ifndef PATHPLANNER_V2_WINDOWSYSTEM_H
 #define PATHPLANNER_V2_WINDOWSYSTEM_H
 
-#include <GLFW/glfw3.h>
-#include "keyInputs.h"
+
+#include "GLFW/glfw3.h"
 
 GLFWwindow* WindowLoader(int versionMin, int versionMinor, const char* WindowName, int width,  int height);
+
 
 
 
