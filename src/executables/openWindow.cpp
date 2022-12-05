@@ -12,15 +12,7 @@ typedef void* dl_handle;
 typedef int (*running)();
 
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
-{
-    if(key ==  GLFW_KEY_Q)
-        glfwSetWindowShouldClose(window, GLFW_TRUE);
-    if(key == GLFW_KEY_L && action == GLFW_PRESS)
-    {
-        std::cout<<"Loading in context functions "<<std::endl;
-    }
-}
+
 
 
 int run()
@@ -54,6 +46,13 @@ int run()
      */
     Graphics::Display display;
     display.createMainWindow("Basic Window", 640, 480);
+    display.setInputSystem();
+
+
+
+
+
+
 
     //glfwSetWindowUserPointer(window);
 

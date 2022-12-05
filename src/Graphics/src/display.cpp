@@ -7,6 +7,15 @@
 #include "window/WindowSystem.h"
 namespace Graphics
 {
+    void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+    {
+        if(key ==  GLFW_KEY_Q)
+            glfwSetWindowShouldClose(window, GLFW_TRUE);
+        if(key == GLFW_KEY_L && action == GLFW_PRESS)
+        {
+            std::cout<<"Loading in context functions "<<std::endl;
+        }
+    }
 
     int Display::LoadShaders() {
         unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -60,9 +69,17 @@ namespace Graphics
         glfwMakeContextCurrent(currentWindow);
 
     }
+    void Display::setInputSystem()
+    {
+        glfwSetKeyCallback(currentWindow, key_callback);
+    }
     void Display::refreshDisplay() {
         glfwSwapBuffers(currentWindow);
         glfwPollEvents();
+        if(glfwWindowShouldClose(currentWindow))
+        {
+            displayRunning = 0;
+        }
 
     }
     Display::~Display() {

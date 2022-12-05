@@ -38,6 +38,7 @@ public:
 
     ~Display();
     int createMainWindow(const char* windowName, int width, int height);
+    void setInputSystem();
     void refreshDisplay();
 
     inline int DisplayRunning()
