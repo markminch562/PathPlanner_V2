@@ -4,3 +4,6 @@
 [submodule "ext/glfw/glfw"]
 	path = ext/glfw/glfw
 	url = https://github.com/markminch562/glfw.git
+[submodule "ext/stb/stb"]
+	path = ext/stb/stb
+	url = https://github.com/markminch562/stb.git

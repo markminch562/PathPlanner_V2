@@ -9,6 +9,6 @@ add_library(entryPoint executables/openWindow.cpp )
 
 target_include_directories(entryPoint PUBLIC DynamicLib/DynamicLib)
 
-target_link_libraries(entryPoint PUBLIC Graphics)
+target_link_libraries(entryPoint PUBLIC Graphics stb)
 #target_include_directories(Print PUBLIC DynamicLib/DynamicLib)
 #target_include_directories(Random PUBLIC DynamicLib/DynamicLib)

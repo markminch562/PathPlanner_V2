@@ -8,6 +8,8 @@
 #include <dlfcn.h>
 #include <filesystem>
 #include "graphics/display.hpp"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb/stb_image.h"
 typedef void* dl_handle;
 typedef int (*running)();
 
@@ -49,9 +51,14 @@ int run()
     display.setInputSystem();
 
 
+    int width, height, nrChannels;
 
-
-
+    unsigned char* image_map = nullptr;
+    image_map = stbi_load("InternalData/images/Path1.png", &width, &height, &nrChannels, 0);
+    if(image_map == nullptr)
+    {
+        return 0;
+    }
 
 
     //glfwSetWindowUserPointer(window);
