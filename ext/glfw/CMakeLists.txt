@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21.0)
 
 find_package(X11 QUIET)
-if(NOT X11_FOUND)
+if(NOT X11_FOUND AND NOT APPLE)
     message(FATAL_ERROR "X11 Library and headers not found in cmake search paths, this is needed for window creation, please install GNU developer tools with <sudo apt install xorg-dev>")
 endif()
 

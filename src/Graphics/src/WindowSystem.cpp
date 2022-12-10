@@ -23,7 +23,9 @@ GLFWwindow* WindowLoader(int versionMajor, int versionMinor, const char* WindowN
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, versionMajor);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, versionMinor);
-
+    #ifdef __APPLE__
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    #endif
     window = glfwCreateWindow(width, height, WindowName, NULL, NULL);
     if(!window)
     {
@@ -32,7 +34,11 @@ GLFWwindow* WindowLoader(int versionMajor, int versionMinor, const char* WindowN
     }
 
     glfwMakeContextCurrent(window);
-    gladLoadGL(glfwGetProcAddress);
+    #ifdef __APPLE__
+        gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+    #else
+        gladLoadGL(glfwGetProcAddress);
+    #endif
     glfwSwapInterval(1);
 
 
